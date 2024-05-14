@@ -4,12 +4,18 @@ import css from "./ContactForm.module.css";
 import { useDispatch } from "react-redux";
 import * as Yup from "yup";
 import { addContact } from "../../redux/contacts/operation";
+import toast from "react-hot-toast";
 
 export default function ContactForm() {
   const dispatch = useDispatch();
 
   const handleSubmit = (values, actions) => {
-    dispatch(addContact(values));
+    dispatch(addContact(values))
+      .unwrap()
+      .then((data) =>
+        toast.success("Your contact has been successfully added!")
+      )
+      .catch((error) => error.message);
     actions.resetForm();
   };
 

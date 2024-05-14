@@ -2,12 +2,17 @@ import { useDispatch } from "react-redux";
 import { logIn } from "../../redux/auth/operation";
 import { Formik, Form, Field } from "formik";
 import css from "./LoginForm.module.css";
+import toast from "react-hot-toast";
 
 export default function LoginForm() {
   const dispatch = useDispatch();
 
   const handleSubmit = (values, actions) => {
-    dispatch(logIn(values));
+    dispatch(logIn(values))
+      .unwrap()
+      .then((data) => toast.success("Success!!!"))
+      .catch((error) => error.message);
+
     actions.resetForm();
   };
   return (
