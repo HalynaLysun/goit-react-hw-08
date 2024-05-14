@@ -1,0 +1,10 @@
+.container {
+  display: flex;
+  gap: 16px;
+  justify-content: space-between;
+}
+
+.button {
+  height: 20px;
+  align-self: center;
+}

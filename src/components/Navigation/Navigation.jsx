@@ -8,14 +8,7 @@ export default function Navigation() {
         <NavLink className={css.link} to="/">
           Home
         </NavLink>
-        <NavLink className={css.link} to="/register">
-          Register
-        </NavLink>
-        <NavLink className={css.link} to="/login">
-          Login
-        </NavLink>
       </nav>
-      <hr className={css.line} />
     </div>
   );
 }
