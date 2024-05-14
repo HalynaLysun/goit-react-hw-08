@@ -21,31 +21,31 @@ const ContactsPage = lazy(() => import("../pages/ContactsPage/ContactsPage"));
 const NotFoundPage = lazy(() => import("../pages/NotFoundPage/NotFoundPage"));
 
 export default function App() {
-  const dispatch = useDispatch();
-  const isLoading = useSelector(selectLoading);
-  const isError = useSelector(selectError);
+  // const dispatch = useDispatch();
+  // const isLoading = useSelector(selectLoading);
+  // const isError = useSelector(selectError);
 
-  useEffect(() => {
-    dispatch(fetchContacts());
-  }, [dispatch]);
+  // useEffect(() => {
+  //   dispatch(fetchContacts());
+  // }, [dispatch]);
 
   return (
     <Layout>
-      <div>
+      {/* <div>
         <h1>Phonebook</h1>
         <ContactForm />
         <SearchBox />
         <ContactList />
         {isLoading && <Loader />}
         {isError && <Error />}
-      </div>
+      </div> */}
       <Suspense fallback={<div>Please wait loading page...</div>}>
         <Routes>
-          <Route path="/" element={<HomePage />}></Route>
-          <Route path="/register" element={<RegistrationPage />}></Route>
-          <Route path="/login" element={<LoginPage />}></Route>
-          <Route path="/contacts" element={<ContactsPage />}></Route>
-          <Route path="*" element={<NotFoundPage />}></Route>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/register" element={<RegistrationPage />} />
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/contacts" element={<ContactsPage />} />
+          <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </Suspense>
     </Layout>
