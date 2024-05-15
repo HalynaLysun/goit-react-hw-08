@@ -12,9 +12,7 @@ export default function ContactForm() {
   const handleSubmit = (values, actions) => {
     dispatch(addContact(values))
       .unwrap()
-      .then((data) =>
-        toast.success("Your contact has been successfully added!")
-      )
+      .then(() => toast.success("Your contact has been successfully added!"))
       .catch((error) => error.message);
     actions.resetForm();
   };

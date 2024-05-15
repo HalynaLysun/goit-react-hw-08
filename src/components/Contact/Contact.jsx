@@ -10,9 +10,7 @@ export default function Contact({ id, name, number }) {
   const handleDelete = () =>
     dispatch(deleteContact(id))
       .unwrap()
-      .then((data) =>
-        toast.success("Your contact has been successfully deleted!")
-      )
+      .then(() => toast.success("Your contact has been successfully deleted!"))
       .catch((error) => error.message);
   return (
     <div className={css.wrapper}>

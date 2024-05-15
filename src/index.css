@@ -1,5 +1,23 @@
 body {
   padding: 30px 15px;
+  background-color: blueviolet;
+  color: beige;
+}
+
+Link {
+  text-decoration: none;
+  color: beige;
+}
+
+button {
+  background-color: beige;
+  border: none;
+  border-radius: 3px;
+  color: blueviolet;
+  font-weight: 700;
+  padding: 3px 6px;
+  display: flex;
+  align-items: center;
 }
 
 ul {
