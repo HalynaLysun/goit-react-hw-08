@@ -1,5 +1,7 @@
 import { Routes, Route } from "react-router-dom";
-import { lazy, Suspense } from "react";
+import { lazy, Suspense, useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { refreshUser } from "../redux/auth/operation";
 
 const Layout = lazy(() => import("../components/Layout/Layout"));
 const HomePage = lazy(() => import("../pages/HomePage/HomePage"));
@@ -11,6 +13,10 @@ const ContactsPage = lazy(() => import("../pages/ContactsPage/ContactsPage"));
 const NotFoundPage = lazy(() => import("../pages/NotFoundPage/NotFoundPage"));
 
 export default function App() {
+  const dispatch = useDispatch();
+
+  useEffect(() => dispatch(refreshUser()), [dispatch]);
+
   return (
     <Layout>
       <Suspense fallback={<div>Please wait loading page...</div>}>
