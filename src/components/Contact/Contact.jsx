@@ -16,11 +16,11 @@ export default function Contact({ id, name, number }) {
     <div className={css.wrapper}>
       <div>
         <h1>
-          <RiUser3Fill />
+          <RiUser3Fill className={css.icon} />
           {name}
         </h1>
         <p>
-          <BiSolidPhone />
+          <BiSolidPhone className={css.icon} />
           {number}
         </p>
       </div>

@@ -1,8 +1,16 @@
 .container {
-  display: flex;
-  gap: 20px;
+  background-image: url("https://thumbs.dreamstime.com/b/mano-maschio-con-lo-smartphone-sopra-le-icone-dei-contatti-49600994.jpg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 360px;
 }
 
 .text {
+  padding-left: 420px;
   font-size: 20px;
+  line-height: 1.5em;
+}
+
+.title {
+  text-align: center;
 }

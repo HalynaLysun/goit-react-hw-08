@@ -3,8 +3,10 @@ import { lazy, Suspense, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { refreshUser } from "../redux/auth/operation";
 import { selectRefreshUser } from "../redux/auth/selectors";
+import Layout from "../components/Layout/Layout";
+import ResctrictedRoute from "./ResctrictedRoute";
+import PrivateRoute from "./PrivateRoute";
 
-const Layout = lazy(() => import("../components/Layout/Layout"));
 const HomePage = lazy(() => import("../pages/HomePage/HomePage"));
 const RegistrationPage = lazy(() =>
   import("../pages/RegistrationPage/RegistrationPage")
@@ -17,7 +19,9 @@ export default function App() {
   const dispatch = useDispatch();
   const isRefreshing = useSelector(selectRefreshUser);
 
-  useEffect(() => dispatch(refreshUser()), [dispatch]);
+  useEffect(() => {
+    dispatch(refreshUser());
+  }, [dispatch]);
 
   return isRefreshing ? (
     <b>Some text</b>
@@ -26,9 +30,30 @@ export default function App() {
       <Suspense fallback={<div>Please wait loading page...</div>}>
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/register" element={<RegistrationPage />} />
-          <Route path="/login" element={<LoginPage />} />
-          <Route path="/contacts" element={<ContactsPage />} />
+          <Route
+            path="/register"
+            element={
+              <ResctrictedRoute
+                component={<RegistrationPage />}
+                redirectTo="/contacts"
+              />
+            }
+          />
+          <Route
+            path="/login"
+            element={
+              <ResctrictedRoute
+                component={<LoginPage />}
+                redirectTo="/contacts"
+              />
+            }
+          />
+          <Route
+            path="/contacts"
+            element={
+              <PrivateRoute component={<ContactsPage />} redirectTo="/login" />
+            }
+          />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </Suspense>

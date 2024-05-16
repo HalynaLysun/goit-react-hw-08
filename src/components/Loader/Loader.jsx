@@ -1,8 +1,9 @@
+import css from "./Loader.module.css";
 import { Hearts } from "react-loader-spinner";
 
 export default function Loader() {
   return (
-    <>
+    <div className={css.container}>
       <p>Please wait a moment</p>
       <Hearts
         height="40"
@@ -13,6 +14,6 @@ export default function Loader() {
         wrapperClass=""
         visible={true}
       />
-    </>
+    </div>
   );
 }

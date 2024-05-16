@@ -16,8 +16,7 @@ button {
   color: blueviolet;
   font-weight: 700;
   padding: 3px 6px;
-  display: flex;
-  align-items: center;
+  text-align: center;
 }
 
 ul {
@@ -25,4 +24,9 @@ ul {
   list-style: none;
   display: flex;
   justify-content: center;
+}
+
+label {
+  font-size: 16px;
+  margin-right: 12px;
 }

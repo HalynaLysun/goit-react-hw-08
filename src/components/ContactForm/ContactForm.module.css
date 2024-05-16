@@ -3,3 +3,10 @@
   gap: 12px;
   width: 100%;
 }
+
+.input {
+  border-radius: 3px;
+  border: none;
+  height: 22px;
+  width: 190px;
+}
