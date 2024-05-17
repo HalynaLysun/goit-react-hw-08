@@ -1,7 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import { lazy, Suspense, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { refreshUser } from "../redux/auth/operation";
+import { refreshUser } from "../redux/auth/operations";
 import { selectRefreshUser } from "../redux/auth/selectors";
 import Layout from "../components/Layout/Layout";
 import ResctrictedRoute from "./ResctrictedRoute";

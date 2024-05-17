@@ -9,4 +9,6 @@
   border: none;
   height: 22px;
   width: 190px;
+  outline: none;
+  padding-left: 8px;
 }
