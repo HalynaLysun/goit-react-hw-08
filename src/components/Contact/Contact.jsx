@@ -2,7 +2,7 @@ import { RiUser3Fill } from "react-icons/ri";
 import { BiSolidPhone } from "react-icons/bi";
 import css from "./Contact.module.css";
 import { useDispatch } from "react-redux";
-import { deleteContact } from "../../redux/contacts/operation";
+import { deleteContact } from "../../redux/contacts/operations";
 import toast from "react-hot-toast";
 import Modal from "../Modal/Modal";
 import { useState } from "react";

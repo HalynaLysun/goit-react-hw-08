@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux";
-import { logIn } from "../../redux/auth/operation";
+import { logIn } from "../../redux/auth/operations";
 import { Formik, Form, Field } from "formik";
 import css from "./LoginForm.module.css";
 import toast from "react-hot-toast";
