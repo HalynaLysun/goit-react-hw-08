@@ -17,6 +17,11 @@ button {
   font-weight: 700;
   padding: 3px 6px;
   text-align: center;
+  height: 26px;
+}
+
+button:hover {
+  background-color: #d1c5c5;
 }
 
 ul {

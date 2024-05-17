@@ -4,8 +4,12 @@ import css from "./Contact.module.css";
 import { useDispatch } from "react-redux";
 import { deleteContact } from "../../redux/contacts/operation";
 import toast from "react-hot-toast";
+import Modal from "../Modal/Modal";
+import { useState } from "react";
 
 export default function Contact({ id, name, number }) {
+  const [modalState, setModalState] = useState(false);
+
   const dispatch = useDispatch();
   const handleDelete = () =>
     dispatch(deleteContact(id))
@@ -24,8 +28,16 @@ export default function Contact({ id, name, number }) {
           {number}
         </p>
       </div>
-
-      <button type="button" className={css.button} onClick={handleDelete}>
+      <Modal
+        call={modalState}
+        onClose={() => setModalState(false)}
+        onClick={handleDelete}
+      />
+      <button
+        type="button"
+        className={css.button}
+        onClick={() => setModalState(true)}
+      >
         Delete
       </button>
     </div>

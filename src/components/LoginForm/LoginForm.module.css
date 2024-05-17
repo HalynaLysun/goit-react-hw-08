@@ -3,12 +3,19 @@
   flex-direction: column;
   gap: 12px;
   width: 300px;
+  margin-top: 30px;
 }
 
 .button {
   width: 70px;
+  margin-top: 16px;
 }
 
 .field {
   width: 100%;
+  height: 26px;
+  border-radius: 3px;
+  border: none;
+  outline: none;
+  padding-left: 8px;
 }

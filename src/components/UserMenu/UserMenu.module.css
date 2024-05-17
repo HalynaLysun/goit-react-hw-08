@@ -5,8 +5,12 @@
 }
 
 .button {
-  height: 20px;
+  height: 26px;
   align-self: center;
+}
+
+.button:hover {
+  background-color: #d1c5c5;
 }
 
 .text {
